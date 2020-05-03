@@ -1,3 +1,16 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #2c5728;
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+}
+
 header{
     width: 50%;
     margin: 0 auto;
@@ -7,32 +20,40 @@ header{
 h1{
     font-family: 'Berkshire Swash', cursive;
     font-size: calc(1rem + 5vw);
-    margin: 28% auto 0 auto;
+    margin: 12vw auto 0 auto;
     position: relative;
     width: fit-content;
+    color: #00cc00;
+    text-shadow: 4px 3px black;
+    z-index: 1;
 }
 
 h1::after{
     content: "& Son";
     position: absolute;
     bottom: 0;
-    right: -30%;
+    right: -33%;
     font-size: calc(1rem + 1vw);
+    color: rgb(25, 66, 25);
     font-weight: 100;
+    text-shadow: none;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
+h2{
+    font-size: calc(1rem + 0.5vw);
+    margin-top: 2vw;
+    font-style: italic;
 }
+
+
 
 .audrey2{
     position: absolute;
     top: 2%;
-    left: calc( (100% - 25vw) / 2);
-    z-index: -1;
+    left: calc( (100% - 20vw) / 2);
     border-radius: 50%;
-    width: 25vw;
-    height: 25vw;
+    width: 20vw;
+    height: 20vw;
     overflow: hidden;
     margin: 0 auto;
 }
@@ -41,5 +62,51 @@ body{
     position: relative;
     width: 140%;
     left: -20%;
-    opacity: 50%;
+}
+
+main{
+    width: 65%;
+    margin: 0 auto;
+}
+
+p{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+.buttons{
+    margin: 0 auto;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons button{
+    border: none;
+    margin: 3% 0;
+    padding: 2%;
+    
+}
+
+.signUp{
+    background-color: #2a8621;
+    width: 20vw;
+    color: white;
+    /* font-family: 'Berkshire Swash', cursive; */
+    letter-spacing: 0.5px;
+    font-size: calc(1rem + 0.5vw);
+    font-weight: bold;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.return{
+    background-color: white;
+    font-weight: bold;
+    color: grey;
+    font-family: 'Poppins', sans-serif;
+    width: 10vw;
 }
