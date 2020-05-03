@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 function App(){
+    const [modalShow, setModalShow] = useState(false);
+
  return(
      <div className="wrapper">
+         <Modal
+            isShowing={modalShow}
+            setIsShowing={setModalShow}
+         />
          <header>
              <h1>Mushnik</h1>
              <div className="audrey2">
@@ -13,14 +20,15 @@ function App(){
          <main>
             <p>Found during a total eclipse of the sun on sale for $1.95, Audrey II is now the most famous plan in the world. Until now, our propritary growing method has been kept a secret, but now you too may grow your own Audrey 3, 4, 5... as many as you please!</p>
 
-            <h3>Sign up to recieve a free clipping of the world's largest Flytrap, Audrey II!</h3>
+            <h3>Sign up to recieve a free clipping of the world's largest Flytrap!</h3>
 
             <div className="buttons">
-            <button className="signUp">Sign Up</button>
+            <button className="signUp" onClick={() => setModalShow(true)}>Sign Up</button>
             <button className="return">Return Clipping</button>
             </div>
 
          </main>
+         <div id="modal-root"></div>
      </div>
  )
 }
