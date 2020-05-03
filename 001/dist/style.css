@@ -1,0 +1,45 @@
+header{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1{
+    font-family: 'Berkshire Swash', cursive;
+    font-size: calc(1rem + 5vw);
+    margin: 28% auto 0 auto;
+    position: relative;
+    width: fit-content;
+}
+
+h1::after{
+    content: "& Son";
+    position: absolute;
+    bottom: 0;
+    right: -30%;
+    font-size: calc(1rem + 1vw);
+    font-weight: 100;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.audrey2{
+    position: absolute;
+    top: 2%;
+    left: calc( (100% - 25vw) / 2);
+    z-index: -1;
+    border-radius: 50%;
+    width: 25vw;
+    height: 25vw;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.audrey2 img{
+    position: relative;
+    width: 140%;
+    left: -20%;
+    opacity: 50%;
+}
