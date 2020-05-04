@@ -11,10 +11,13 @@ module.exports = {
         } 
       ]
     },
-    entry: "./src/index.jsx",
+    entry: {
+      "../001/dist/": "./001/src/index.jsx",
+      "../002/dist/": "./002/src/index.jsx"
+    },
     output: {
-        path: path.resolve("./dist/js"),
-        filename: "script.bundle.js"
+        path: path.resolve(__dirname, 'dist'),
+        filename: "[name]bundle.js"
     },
     resolve: {extensions: ['.js', '.jsx']},
     mode: 'development',
