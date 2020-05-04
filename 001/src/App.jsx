@@ -3,12 +3,24 @@ import Modal from './Modal';
 
 function App(){
     const [modalShow, setModalShow] = useState(false);
+    const [sOrR, setSOrR] = useState("signUp");
+
+    function handleSignUp(){
+        setSOrR("signUp");
+        setModalShow(true);
+    }
+
+    function handleReturn(){
+        setSOrR("return");
+        setModalShow(true);
+    }
 
  return(
      <div className="wrapper">
          <Modal
             isShowing={modalShow}
             setIsShowing={setModalShow}
+            sOrR={sOrR}
          />
          <header>
              <h1>Mushnik</h1>
@@ -23,8 +35,8 @@ function App(){
             <h3>Sign up to recieve a free clipping of the World's Largest Flytrap!</h3>
 
             <div className="buttons">
-            <button className="signUp" onClick={() => setModalShow(true)}>Sign Up</button>
-            <button className="return">Return Clipping</button>
+            <button className="signUp" onClick={() => handleSignUp()}>Sign Up</button>
+            <button className="return" onClick={() => handleReturn()}>Return Clipping</button>
             </div>
 
          </main>
