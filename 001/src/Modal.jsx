@@ -23,14 +23,18 @@ function Modal({
 
         <label htmlFor="blood">Blood Type</label>
         <div className="radio">
-        <label htmlFor="a">A</label>
+            
             <input type="radio" id="a" name="blood"/>
-            <label htmlFor="b">B</label>
+            <label htmlFor="a">A</label>
+            
             <input type="radio" id="b" name="blood"/>
-            <label htmlFor="ab">AB</label>
+            <label htmlFor="b">B</label>
+            
             <input type="radio" id="ab" name="blood"/>
-            <label htmlFor="o">O</label>
+            <label htmlFor="ab">AB</label>
+            
             <input type="radio" id="o" name="blood"/>
+            <label htmlFor="o">O</label>
         </div>
             
 
