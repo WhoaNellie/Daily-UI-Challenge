@@ -1,19 +1,56 @@
-import React from 'react';
+import React from "react";
 
-function App(){
-    return(
-        <React.Fragment>
-            <header>
-                <h1>Nellie's Entries to the Daily UI Challenge</h1>
-            </header>
-            <main>
-                <ul>
-                    <li><a href="./001/index.html">001 - Sign Up Modal</a></li>
-                    <li><a href="./002/index.html">001 - Credit Card Checkout</a></li>
-                </ul>
-            </main>
-        </React.Fragment>
+function App() {
+  let challenges = [
+    {
+      num: 1,
+      name: "Sign Up Modal",
+      tech: ["react", "webpack", "sass"],
+      page: "./001/index.html",
+      repo: "https://github.com/WhoaNellie/UI-Challenges/tree/master/001",
+    },
+    {
+      num: 2,
+      name: "Credit Card Checkout",
+      tech: ["figma"],
+      mockup: "./002/mockup.png",
+      page: "./002/index.html"
+    },
+  ];
+
+  return (
+    <React.Fragment>
+      <header>
+        <h1>UI Challenge</h1>
+        <p>
+          Based on the daily prompts from <a href="dailyui.co">dailyui.co</a>
+        </p>
+      </header>
+      <main>
+          <div className="filters">
+            <button>React.js</button>
+            <button>Webpack</button>
+            <button>Sass</button>
+            <button>Figma</button>
+          </div>
+            
+        <ChallengeList data={challenges}/>
+      </main>
+    </React.Fragment>
+  );
+}
+
+function ChallengeList({ data }){
+    return (
+        <ul>
+            {data.map(el => (
+                <li className={el.tech.join(' ')}  key={el.num}>
+                    <a href={el.url}>{el.name}</a> {(el.repo && <React.Fragment>(<a href={el.repo}>Source</a>)</React.Fragment>)}
+                </li>
+            ))}
+        </ul>
     )
 }
+
 
 export default App;
