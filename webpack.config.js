@@ -22,6 +22,6 @@ module.exports = {
         filename: "[name]script.bundle.js"
     },
     resolve: {extensions: ['.js', '.jsx']},
-    mode: 'development',
+    mode: 'production',
     watch: true
   };

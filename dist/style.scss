@@ -1,0 +1,15 @@
+$desktop: 550px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop}){
+        @content;
+    }   
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+
+    @include desktop{
+        color: red;
+    }
+}
