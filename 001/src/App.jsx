@@ -30,7 +30,7 @@ function App(){
              <h2>Home of the World's most fabulous plant, Audrey II!</h2>
          </header>
          <main>
-            <p>Found during a total eclipse of the sun on sale for $1.95, Audrey II is now the most famous plan in the world. Until now, our little shop's propritary growing method has been kept a secret, but now you too may grow your own Audrey 3, 4, 5 . . . as many as you please!</p>
+            <p>Found during a total eclipse of the sun on sale for $1.95, Audrey II is now the most famous plan in the world. Until now, our little shop's propritary growing method has been kept a secret, but now you too may grow your own Audrey 3, 4, 5&#x2026; as many as you please!</p>
 
             <h3>Sign up to recieve a free clipping of the World's Largest Flytrap!</h3>
 
