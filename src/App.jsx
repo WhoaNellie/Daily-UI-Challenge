@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 function App() {
   const [selectionState, setSelectionState] = useState({
-    "React": false,
-    "Webpack": false,
-    "Sass": false,
-    "Figma": false
+    React: false,
+    Webpack: false,
+    Sass: false,
+    Figma: false,
   });
 
   let challenges = [
@@ -36,9 +36,25 @@ function App() {
       </header>
       <main>
         <div className="filters">
-          {Object.keys(selectionState).map(e => <FilterButton name={e} selectionState={selectionState} setSelectionState={setSelectionState}/>)}
+          {Object.keys(selectionState).map((e) => (
+            <FilterButton
+              name={e}
+              selectionState={selectionState}
+              setSelectionState={setSelectionState}
+            />
+          ))}
+          <button
+            onClick={() =>
+              setSelectionState({
+                React: false,
+                Webpack: false,
+                Sass: false,
+                Figma: false,
+              })}>
+            Clear
+          </button>
         </div>
-        <ChallengeList selectionState={selectionState} list={challenges}/>
+        <ChallengeList selectionState={selectionState} list={challenges} />
       </main>
     </React.Fragment>
   );
@@ -51,7 +67,12 @@ function FilterButton({ name, selectionState, setSelectionState }) {
       <input
         id={idName}
         checked={selectionState[name]}
-        onChange={() => setSelectionState({...selectionState, [name] : !selectionState[name]})}
+        onChange={() =>
+          setSelectionState({
+            ...selectionState,
+            [name]: !selectionState[name],
+          })
+        }
         type="checkbox"
       />
       <label htmlFor="elClass">{name}</label>
@@ -63,18 +84,20 @@ function ChallengeList({ selectionState, list }) {
   let searchState = Object.keys(selectionState);
   return (
     <ul>
-      {
-        list.map(el => {
-          let show = true;
+      {list.map((el) => {
+        let show = true;
 
-          for(let i = 0; i < searchState.length; i++){
-            if(selectionState[searchState[i]] && !el.tech.includes(searchState[i])){
-              show = false;
-            }
+        for (let i = 0; i < searchState.length; i++) {
+          if (
+            selectionState[searchState[i]] &&
+            !el.tech.includes(searchState[i])
+          ) {
+            show = false;
           }
+        }
 
-          if(show){
-            return(
+        if (show) {
+          return (
             <li className={el.tech.join(" ") + " challenge"} key={el.num}>
               <a href={el.url}>{el.name}</a>
               {el.repo && (
@@ -87,12 +110,11 @@ function ChallengeList({ selectionState, list }) {
                   (<a href={el.mockup}>Mockup</a>)
                 </React.Fragment>
               )}
-            </li>)
-          }
-        })
-      }
+            </li>
+          );
+        }
+      })}
     </ul>
-        
   );
 }
 
